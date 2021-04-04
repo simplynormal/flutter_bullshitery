@@ -10,13 +10,10 @@ class MyTest extends StatelessWidget {
       'password': 'Ohyeahbaby123'
     });
     response = await Dio().post("http://103.92.30.200:2100/login",data:formData);
-    print(response.data);
-    print(response.statusCode);
-    if(response.data['status'] != -1)
+    if(response.statusCode==200)
     {
-      Map data = response.data;
-      print(data['access_token']);
-      print(data['user']['user_fname']);
+      print(response.data);
+      print(response.data);
     }
     else
     {
@@ -29,7 +26,6 @@ class MyTest extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Test'),
-        centerTitle: true,
       ),
       body: Center(
         child: ElevatedButton(
