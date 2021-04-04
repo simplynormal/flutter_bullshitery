@@ -4,16 +4,18 @@ import 'package:flutter_app/qrcode.dart';
 import 'body.dart';
 import 'login.dart';
 import 'animation.dart';
+import 'test.dart';
 
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/animation',
+        initialRoute: '/test',
         routes: {
           '/': (context) => Container(color: Colors.grey[400], child: SafeArea(child: Home())),
           '/login': (context) => Container(color: Colors.grey[400], child: SafeArea(child: LoginScreen())),
           '/qr': (context) => Container(color: Colors.grey[400], child: SafeArea(child: QRCode())),
           '/animation': (context) => Container(color: Colors.grey[400], child: SafeArea(child: MyAnimation())),
+          '/test': (context) => Container(color: Colors.grey[400], child: SafeArea(child: MyTest())),
         },
         theme: ThemeData(
             primaryColor: Colors.grey[900],
@@ -141,7 +143,7 @@ class _HomeState extends State<Home> {
               ),
               ListTile(
                 title: Text(
-                  'Item 3',
+                  'Test',
                   style: TextStyle(color: Colors.grey[400]),
                 ),
                 leading: Icon(
@@ -152,7 +154,7 @@ class _HomeState extends State<Home> {
                   // Update the state of the app
                   // ...
                   // Then close the drawer
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/test');
                 },
               ),
               Ink(
