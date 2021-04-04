@@ -12,3 +12,5 @@ class UserInfo
 
   UserInfo(this.name, this.email);
 }
+
+UserInfo user;

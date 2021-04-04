@@ -5,11 +5,12 @@ import 'body.dart';
 import 'login.dart';
 import 'animation.dart';
 import 'test.dart';
+import 'quote.dart';
 
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/test',
+        initialRoute: '/login',
         routes: {
           '/': (context) => Container(color: Colors.grey[400], child: SafeArea(child: Home())),
           '/login': (context) => Container(color: Colors.grey[400], child: SafeArea(child: LoginScreen())),

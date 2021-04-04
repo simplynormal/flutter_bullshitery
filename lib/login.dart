@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:dio/dio.dart';
+import 'quote.dart';
 
 const users = const {
   'dribbble@gmail.com': '12345',
@@ -28,6 +29,7 @@ class LoginScreen extends StatelessWidget {
       }
     }
 
+    user = UserInfo(response.data['user']['user_lname'] + ' ' + response.data['user']['user_fname'], data.name);
     return null;
   }
 

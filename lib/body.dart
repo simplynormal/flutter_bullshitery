@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'quote.dart';
 
-UserInfo user = UserInfo('Simply Normal', 'simply.normal@mail.com');
 int level = 0;
 
 class Body extends StatefulWidget {
