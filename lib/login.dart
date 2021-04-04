@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:dio/dio.dart';
 
 const users = const {
   'dribbble@gmail.com': '12345',
@@ -11,17 +12,23 @@ const users = const {
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
 
-  Future<String> _authUser(LoginData data) {
+  Future<String> _authUser(LoginData data) async {
     print('Name: ${data.name}, Password: ${data.password}');
-    return Future.delayed(loginTime).then((_) {
-      if (!users.containsKey(data.name)) {
-        return 'Username not exists';
-      }
-      if (users[data.name] != data.password) {
-        return 'Password does not match';
-      }
-      return null;
+    Response response;
+    var formData = FormData.fromMap({
+      'email': data.name,
+      'password': data.password,
     });
+    response = await Dio().post("http://103.92.30.200:2100/login",data:formData);
+
+    if (response.data['status'] == -1){
+      switch (response.data['message']) {
+        case 'Wrong Pwd': return 'Wrong password';
+        case 'Wrong Acc': return 'Wrong account';
+      }
+    }
+
+    return null;
   }
 
   Future<String> _recoverPassword(String name) {
