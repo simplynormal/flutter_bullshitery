@@ -12,7 +12,7 @@ class _MyAnimationState extends State<MyAnimation> {
   double _width = 200;
   var _color = Colors.cyan;
   int count = 0;
-  int demo = 69;
+  int demo = 99;
 
   void _updateState() {
     setState(
