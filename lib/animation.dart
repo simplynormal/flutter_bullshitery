@@ -10,10 +10,9 @@ class MyAnimation extends StatefulWidget {
 class _MyAnimationState extends State<MyAnimation> {
   double _height = 200;
   double _width = 200;
-  TextStyle _textStyle = TextStyle(fontSize: 22);
   var _color = Colors.cyan;
   int count = 0;
-  int demo = 0;
+  int demo = 69;
 
   void _updateState() {
     setState(
@@ -21,7 +20,6 @@ class _MyAnimationState extends State<MyAnimation> {
         _width = 400;
         _height = 400;
         _color = Colors.amber;
-        _textStyle = TextStyle(fontSize: 44);
         demo = 900;
       },
     );
@@ -32,7 +30,6 @@ class _MyAnimationState extends State<MyAnimation> {
       _width = 200;
       _height = 200;
       _color = Colors.cyan;
-      _textStyle = TextStyle(fontSize: 22);
       demo = 0;
     });
   }
